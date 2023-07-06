@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { getPosts, GetPostDetails } from '../../services';
+import { getPosts, getPostDetails } from '../../services';
 import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader } from '../../components';
 
 const PostDetails = ({ post }) => {
@@ -35,7 +35,7 @@ const PostDetails = ({ post }) => {
 export default PostDetails
 
 export async function getStaticProps({ params }) {
-    const data = await GetPostDetails(params.slug);
+    const data = await getPostDetails(params.slug);
   
     return {
         props: { 
